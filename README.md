@@ -1,6 +1,6 @@
 # Nokaya
 
-CLI to download photos from several online services including Instagram, App.net and Favd. 
+CLI to download photos from several online services including Instagram, Imgur albums, App.net, Tumblr...
 
 Mac OS X only for the time being.
 
