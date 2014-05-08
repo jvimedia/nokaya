@@ -1,29 +1,23 @@
 # Nokaya
 
-TODO: Write a gem description
+CLI to download photos from several online services including Instagram. 
+
+Mac OS X only for the time being.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'nokaya'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install nokaya
+`gem install nokaya`
 
 ## Usage
 
-TODO: Write usage instructions here
+### Instagram
 
-## Contributing
+`nokaya -i url`  
 
-1. Fork it ( https://github.com/[my-github-username]/nokaya/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+`nokaya -i url -n file_name`
+
+Example:
+
+`nokaya -i http://instagram.com/p/noANAfjJ7B/`  
+
+`nokaya -i http://instagram.com/p/noANAfjJ7B/ -n happydog`
