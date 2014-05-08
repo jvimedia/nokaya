@@ -102,14 +102,14 @@ module Nokaya
     end
 
     def download_album img_links, nokaya
-      puts "\nDownloading album at #{nokaya.url}...\n\n"
+      puts Status.downloading_album nokaya
       img_links.each do |link|
         parsed = URI.parse link
         file = "#{Dir.home}/Downloads/#{parsed.path.split("/").last}"
-        puts "Saving #{file}\n"
+        puts Status.saving file
         Image.save_image(file, nokaya.get_image(link))
       end
-      puts "\nDone.\n\n"
+      puts Status.done
     end
 
   end

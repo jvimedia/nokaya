@@ -19,5 +19,14 @@ module Nokaya
     def self.canceled
       "\nCanceled.\n\n"
     end
+    def self.saving file
+      "Saving #{file}\n"
+    end
+    def self.done
+      "\nDone.\n\n"
+    end
+    def self.downloading_album nokaya
+      "\nDownloading album at #{nokaya.url}...\n\n"
+    end
   end
 end
