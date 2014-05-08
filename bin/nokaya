@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+# Nokaya
+# Author: Eric Dejonckheere (http://app.net/ericd)
+
+$PROGRAM_NAME = 'nokaya'
+require_relative '../lib/nokaya'
+
+Nokaya::App.start ARGV
