@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Eric Dejonckheere"]
   spec.email         = ["eric@aya.io"]
   spec.summary       = %q{Download photos from several online services.}
-  spec.description   = %q{CLI to download photos from several online services including Instagram. Mac OS X only for the time being.}
+  spec.description   = %q{CLI to download photos from several online services including Instagram, Imgur albums, Tumblr, App,net, etc. Mac OS X only for the time being.}
   spec.homepage      = "http://github.com/ericdke/nokaya"
   spec.license       = "MIT"
 
