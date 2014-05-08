@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Nokaya::VERSION
   spec.authors       = ["Eric Dejonckheere"]
   spec.email         = ["eric@aya.io"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Download photos from several online services.}
+  spec.description   = %q{CLI to download photos from several online services including Instagram. Mac OS X only for the time being.}
+  spec.homepage      = "http://github.com/ericdke/nokaya"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
