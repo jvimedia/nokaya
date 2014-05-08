@@ -23,8 +23,11 @@ module Nokaya
         abort Status.no_can_do
       end
     end
-    def get_link page
+    def get_instagram page
       page.xpath("//meta[@property='og:image']/@content").first
+    end
+    def get_favd page
+      page.css('#largeImage')[0]['src']
     end
     def parse_page
       Nokogiri::HTML get_page_content
