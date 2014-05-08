@@ -1,6 +1,7 @@
 # 0.0.3
 
 - Favd
+- photos.app.net
 
 # 0.0.2
 

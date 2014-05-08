@@ -13,7 +13,7 @@ module Nokaya
       abort Status.no_url if args.empty?
       nokaya = Getter.new options, :instagram, args
       page = nokaya.parse_page
-      img_link = nokaya.get_instagram page
+      img_link = nokaya.get_basic page
       download_and_save img_link, nokaya
     end
 
@@ -24,6 +24,16 @@ module Nokaya
       nokaya = Getter.new options, :favd, args
       page = nokaya.parse_page
       img_link = nokaya.get_favd page
+      download_and_save img_link, nokaya
+    end
+
+    desc "adn", "Get the photo from a photos.app.net page (nokaya adn url)"
+    option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
+    def adn *args
+      abort Status.no_url if args.empty?
+      nokaya = Getter.new options, :adn, args
+      page = nokaya.parse_page
+      img_link = nokaya.get_basic page
       download_and_save img_link, nokaya
     end
 

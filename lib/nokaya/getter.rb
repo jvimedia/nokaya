@@ -23,7 +23,7 @@ module Nokaya
         abort Status.no_can_do
       end
     end
-    def get_instagram page
+    def get_basic page
       page.xpath("//meta[@property='og:image']/@content").first
     end
     def get_favd page
