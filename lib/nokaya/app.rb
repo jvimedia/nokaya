@@ -37,6 +37,17 @@ module Nokaya
       download_and_save img_link, nokaya
     end
 
+    desc "tumblr", "Get the photo from a Tumblr photo page (nokaya -t url)"
+    map "-t" => :tumblr
+    option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
+    def tumblr *args
+      abort Status.no_url if args.empty?
+      nokaya = Getter.new options, :tumblr, args
+      page = nokaya.parse_page
+      img_link = nokaya.get_tumblr page
+      download_and_save img_link, nokaya
+    end
+
     private
 
     def download_and_save img_link, nokaya

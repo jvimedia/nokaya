@@ -16,6 +16,8 @@ Mac OS X only for the time being.
 
 `nokaya -i url -n file_name`  
 
+`nokaya -i url -n 'file name'`  
+
 Also accepts the IFTTT format (like 'http://ift.tt/1m2Nvz8').  
 
 Example:
@@ -25,6 +27,18 @@ Example:
 `nokaya -i http://instagram.com/p/noANAfjJ7B/ -n happydog`
 
 `nokaya -i http://ift.tt/1m2Nvz8 -n pasta`
+
+### Tumblr
+
+`nokaya -t url` 
+
+`nokaya -t url -n file_name`  
+
+Example:
+
+`nokaya -t http://spacequest.tumblr.com/image/83560738152`  
+
+`nokaya -t http://spacequest.tumblr.com/image/83560738152 -n 'girl and monster'`
 
 ### Favd
 
