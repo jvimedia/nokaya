@@ -4,17 +4,16 @@ module Nokaya
     package_name "Nokaya"
     require_relative 'getter'
 
-    desc "instagram", "Get the main photo from an Instagram page"
-    map "-ins" => :instagram
+    desc "instagram", "Get the main photo from an Instagram page (nokaya -i url)"
+    map "-i" => :instagram
+    option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension (nokaya -i url -n some_name)"
     def instagram *args
       nokaya = Getter.new options, :instagram, args
       page = nokaya.parse_page
-      img_link = page.xpath("//meta[@property='og:image']/@content").first
-      path = Dir.home + "/Downloads/instagram-#{Time.now.to_i}.jpg"
+      img_link = nokaya.get_link page
+      path = nokaya.photo_name
       puts "Downloading #{img_link}, please wait...\n"
-      f = File.new(path, "wb")
-        f.puts(nokaya.get_image img_link)
-      f.close
+      nokaya.save_image path, img_link
       puts "\nImage saved in #{path}\n\n"
     end
   end
