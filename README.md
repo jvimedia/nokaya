@@ -21,3 +21,15 @@ Example:
 `nokaya -i http://instagram.com/p/noANAfjJ7B/`  
 
 `nokaya -i http://instagram.com/p/noANAfjJ7B/ -n happydog`
+
+### Favd
+
+`nokaya favd url` 
+
+`nokaya favd url -n file_name`
+
+Example:
+
+`nokaya favd http://pic.favd.net/29987710`  
+
+`nokaya favd http://pic.favd.net/29987710 -n feet`

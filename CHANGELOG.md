@@ -1,3 +1,7 @@
+# 0.0.3
+
+- Favd
+
 # 0.0.2
 
 - Error messages
