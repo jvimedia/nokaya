@@ -13,5 +13,11 @@ module Nokaya
     def self.no_url
       "\nYou have to specify a page URL.\n\n"
     end
+    def self.error
+      "\nAn unknown error happened.\n\n"
+    end
+    def self.canceled
+      "\nCanceled.\n\n"
+    end
   end
 end
