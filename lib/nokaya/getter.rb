@@ -29,9 +29,6 @@ module Nokaya
     def get_favd page
       page.css('#largeImage')[0]['src']
     end
-    def get_tumblr page
-      page.css('#content-image')[0]['data-src']
-    end
     def parse_page
       Nokogiri::HTML get_page_content
     end

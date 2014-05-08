@@ -44,7 +44,7 @@ module Nokaya
       abort Status.no_url if args.empty?
       nokaya = Getter.new options, :tumblr, args
       page = nokaya.parse_page
-      img_link = nokaya.get_tumblr page
+      img_link = nokaya.get_basic page
       download_and_save img_link, nokaya
     end
 

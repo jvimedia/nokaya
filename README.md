@@ -36,9 +36,9 @@ Example:
 
 Example:
 
-`nokaya -t http://spacequest.tumblr.com/image/83560738152`  
+`nokaya -t http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela`  
 
-`nokaya -t http://spacequest.tumblr.com/image/83560738152 -n 'girl and monster'`
+`nokaya -t http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela -n 'girl and monster'`
 
 ### Favd
 
