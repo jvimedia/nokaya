@@ -35,11 +35,7 @@ module Nokaya
       links
     end
     def parse_page
-      Nokogiri::HTML get_page_content
-    end
-    private
-    def get_page_content
-      open @args.url
+      Nokogiri::HTML(open @args.url)
     end
   end
 end
