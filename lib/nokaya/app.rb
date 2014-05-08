@@ -97,7 +97,7 @@ module Nokaya
     def download_and_save img_link, nokaya
       puts Status.downloading img_link
       path = Image.photo_name nokaya
-      Image.save_image(path, nokaya.get_image(img_link))
+      Image.save_image(path, img_link)
       puts Status.saved path
     end
 
@@ -107,7 +107,7 @@ module Nokaya
         parsed = URI.parse link
         file = "#{Dir.home}/Downloads/#{parsed.path.split("/").last}"
         puts Status.saving file
-        Image.save_image(file, nokaya.get_image(link))
+        Image.save_image(file, link)
       end
       puts Status.done
     end

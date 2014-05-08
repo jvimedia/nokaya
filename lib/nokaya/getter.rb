@@ -16,13 +16,6 @@ module Nokaya
     def url
       @args.url
     end
-    def get_image img_link
-      begin
-        open(img_link).read
-      rescue
-        abort Status.no_can_do
-      end
-    end
     def get_basic page
       page.xpath("//meta[@property='og:image']/@content").first
     end

@@ -1,3 +1,8 @@
+# 0.0.6
+
+- Refactoring
+- Bugfixes
+
 # 0.0.5
 
 - Flickr album
