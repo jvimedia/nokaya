@@ -1,6 +1,7 @@
 # 0.0.4
 
 - Tumblr
+- Imgur album
 
 # 0.0.3
 

@@ -40,6 +40,16 @@ Example:
 
 `nokaya -t http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela -n 'girl and monster'`
 
+### Imgur album
+
+`nokaya -ial url`
+
+Example:
+
+`nokaya -ial http://imgur.com/a/JNzjB\#0`
+
+Downloads all images in the album.  
+
 ### Favd
 
 `nokaya favd url` 

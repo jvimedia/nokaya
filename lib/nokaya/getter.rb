@@ -29,6 +29,12 @@ module Nokaya
     def get_favd page
       page.css('#largeImage')[0]['src']
     end
+    def get_imgur_album page
+      refs = page.css('#imagelist .posts .post a')
+      links = []
+      refs.each {|l| links << "http:#{l['href']}"}
+      links
+    end
     def parse_page
       Nokogiri::HTML get_page_content
     end
