@@ -1,6 +1,6 @@
 # Nokaya
 
-CLI to download photos from several online services including Instagram, Imgur albums, App.net, Tumblr...
+CLI to download photos from several online services including Instagram, Imgur albums, Flickr albums, App.net, Tumblr...
 
 Mac OS X only for the time being.
 
@@ -47,6 +47,16 @@ Example:
 Example:
 
 `nokaya -ial http://imgur.com/a/JNzjB\#0`
+
+Downloads all images in the album.  
+
+### Flickr album
+
+`nokaya -fal url`
+
+Example:
+
+`nokaya -fal https://www.flickr.com/photos/ericdke/sets/72157644556227302/`
 
 Downloads all images in the album.  
 

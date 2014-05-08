@@ -58,6 +58,16 @@ module Nokaya
       download_album img_links, nokaya
     end
 
+    desc "flickr_album", "Get all images from a Flickr album (nokaya -fal url)"
+    map "-fal" => :flickr_album
+    def flickr_album *args
+      abort Status.no_url if args.empty?
+      nokaya = Getter.new options, :flickr_album, args
+      page = nokaya.parse_page
+      img_links = nokaya.get_flickr_album page
+      download_album img_links, nokaya
+    end
+
     private
 
     def download_and_save img_link, nokaya
@@ -71,7 +81,7 @@ module Nokaya
       puts "\nDownloading album at #{nokaya.url}...\n\n"
       img_links.each do |link|
         parsed = URI.parse link
-        file = "#{Dir.home}/Downloads#{parsed.path}"
+        file = "#{Dir.home}/Downloads/#{parsed.path.split("/").last}"
         puts "Saving #{file}\n"
         Image.save_image(file, nokaya.get_image(link))
       end

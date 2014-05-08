@@ -35,6 +35,12 @@ module Nokaya
       refs.each {|l| links << "http:#{l['href']}"}
       links
     end
+    def get_flickr_album page
+      refs = page.css('.pc_img')
+      links = []
+      refs.each {|l| links << l['data-defer-src']}
+      links
+    end
     def parse_page
       Nokogiri::HTML get_page_content
     end

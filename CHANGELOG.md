@@ -1,3 +1,7 @@
+# 0.0.5
+
+- Flickr album
+
 # 0.0.4
 
 - Tumblr
