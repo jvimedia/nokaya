@@ -12,9 +12,7 @@ module Nokaya
     def instagram *args
       check_args args
       nokaya = Getter.new options, :instagram, args
-      page = nokaya.parse_page
-      img_link = nokaya.get_basic page
-      save_pic img_link, nokaya
+      basic nokaya
     end
 
     desc "favd", 'Get the photo from a Favd page (nokaya favd url)'
@@ -32,20 +30,16 @@ module Nokaya
     def adn *args
       check_args args
       nokaya = Getter.new options, :adn, args
-      page = nokaya.parse_page
-      img_link = nokaya.get_basic page
-      save_pic img_link, nokaya
+      basic nokaya
     end
 
-    desc "tumblr", "Get the photo from a Tumblr photo page (nokaya -t url)"
+    desc "tumblr", "Get the photo from a Tumblr post (nokaya -t url)"
     map "-t" => :tumblr
     option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
     def tumblr *args
       check_args args
       nokaya = Getter.new options, :tumblr, args
-      page = nokaya.parse_page
-      img_link = nokaya.get_basic page
-      save_pic img_link, nokaya
+      basic nokaya
     end
 
     desc "imgur_album", "Get all images from an Imgur album (nokaya -ial url)"
@@ -69,6 +63,12 @@ module Nokaya
     end
 
     private
+
+    def basic nokaya
+      page = nokaya.parse_page
+      img_link = nokaya.get_basic page
+      save_pic img_link, nokaya
+    end
 
     def check_args args
       abort Status.no_url if args.empty?
