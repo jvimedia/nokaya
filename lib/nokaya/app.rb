@@ -72,6 +72,16 @@ module Nokaya
       save_album img_links, nokaya
     end
 
+    desc "photonet_page", "Get all images from a Photo.net page (nokaya -pnet url)"
+    map "-pnet" => :photonet_page
+    def photonet_page *args
+      check_args args
+      nokaya = Getter.new options, :photonet, args
+      page = nokaya.parse_page
+      img_links = nokaya.get_photonet_album page
+      save_album img_links, nokaya
+    end
+
     private
 
     def basic nokaya
@@ -92,10 +102,12 @@ module Nokaya
     end
 
     def download_album img_links, nokaya
-      puts Status.downloading_album nokaya
+      dir = "#{Dir.home}/Downloads/#{nokaya.type}-#{Time.now.to_i}"
+      puts Status.downloading_album dir
+      Dir.mkdir dir
       img_links.each do |link|
         parsed = URI.parse link
-        file = "#{Dir.home}/Downloads/#{parsed.path.split("/").last}"
+        file = "#{dir}/#{parsed.path.split("/").last}"
         puts Status.saving file
         Image.save_image(file, link)
       end
@@ -112,6 +124,7 @@ module Nokaya
 
     def save_album img_links, nokaya
       begin
+        abort Status.no_can_do if img_links.empty?
         download_album img_links, nokaya
       rescue Interrupt
         abort Status.canceled

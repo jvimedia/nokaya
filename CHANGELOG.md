@@ -1,3 +1,8 @@
+# 0.0.7
+
+- Download each album in a unique folder
+- Photo.net
+
 # 0.0.6
 
 - Refactoring

@@ -74,6 +74,16 @@ Example:
 
 Downloads all images in the album.  
 
+### Photo.net page
+
+`nokaya -pnet url`
+
+Example:
+
+`nokaya -pnet http://photo.net/gallery/photocritique/filter\?period\=365\&rank_by\=sum\&category\=Architecture\&store_prefs_p\=0`
+
+Downloads all images in the page.  
+
 ### Favd
 
 `nokaya favd url` 

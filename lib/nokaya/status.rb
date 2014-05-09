@@ -25,8 +25,8 @@ module Nokaya
     def self.done
       "\nDone.\n\n"
     end
-    def self.downloading_album nokaya
-      "\nDownloading album at #{nokaya.url}...\n\n"
+    def self.downloading_album dir
+      "\nDownloading album at #{dir}/...\n\n"
     end
   end
 end

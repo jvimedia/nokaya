@@ -29,7 +29,7 @@ module Nokaya
       links
     end
     def get_tumblr_album page
-      queries = ['img.photo', '.post .photo a img', '.entry img', 'article img', '.image img', '.item_content img', 'img.post-image', '.box img', '#allposts img', '.media img', '.wide img', '.big img', '.large img', '.gallery img', '.photos img', 'img']
+      queries = ['img.photo', '.post .photo a img', '.entry img', 'article img', '.image img', '.item_content img', 'img.post-image', '.box img', '#allposts img', '.media img', '.wide img', '.big img', '.large img', '.gallery img', '.photos img', '.content img', 'img']
       queries.each do |query|
         @refs = page.css query
         next if @refs.empty?
@@ -48,6 +48,14 @@ module Nokaya
       refs = page.css('.pc_img')
       links = []
       refs.each {|l| links << l['data-defer-src']}
+      links
+    end
+    def get_photonet_album page
+      refs = page.css '.trp-top a'
+      links = []
+      refs.each do |lin|
+        links << "http://gallery.photo.net/photo/#{lin['href'].split("=").last}-lg.jpg"
+      end
       links
     end
     def parse_page
