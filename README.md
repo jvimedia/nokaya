@@ -28,17 +28,27 @@ Example:
 
 `nokaya -i http://ift.tt/1m2Nvz8 -n pasta`
 
-### Tumblr
+### Tumblr post
 
-`nokaya -t url` 
+`nokaya -tu url` 
 
-`nokaya -t url -n file_name`  
+`nokaya -tu url -n file_name`  
 
 Example:
 
-`nokaya -t http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela`  
+`nokaya -tu http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela`  
 
-`nokaya -t http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela -n 'girl and monster'`
+`nokaya -tu http://spacequest.tumblr.com/post/83560738152/sexycomics-carlos-valenzuela -n 'girl and monster'`
+
+### Tumblr page
+
+`nokaya -tal url`
+
+Example:
+
+`nokaya -tal http://brekninger.tumblr.com`
+
+Downloads all images in the album.  
 
 ### Imgur album
 

@@ -28,6 +28,12 @@ module Nokaya
       refs.each {|l| links << "http:#{l['href']}"}
       links
     end
+    def get_tumblr_album page
+      refs = page.css('img.photo')
+      links = []
+      refs.each {|l| links << l['src']}
+      links
+    end
     def get_flickr_album page
       refs = page.css('.pc_img')
       links = []

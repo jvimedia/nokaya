@@ -2,6 +2,7 @@
 
 - Refactoring
 - Bugfixes
+- Tumblr page
 
 # 0.0.5
 
@@ -9,7 +10,7 @@
 
 # 0.0.4
 
-- Tumblr
+- Tumblr image
 - Imgur album
 
 # 0.0.3

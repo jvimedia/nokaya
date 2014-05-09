@@ -33,13 +33,23 @@ module Nokaya
       basic nokaya
     end
 
-    desc "tumblr", "Get the photo from a Tumblr post (nokaya -t url)"
-    map "-t" => :tumblr
+    desc "tumblr", "Get the photo from a Tumblr post (nokaya -tu url)"
+    map "-tu" => :tumblr
     option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
     def tumblr *args
       check_args args
       nokaya = Getter.new options, :tumblr, args
       basic nokaya
+    end
+
+    desc "tumblr_album", "Get all images from a Tumblr page (nokaya -tal url)"
+    map "-tal" => :tumblr_album
+    def tumblr_album *args
+      check_args args
+      nokaya = Getter.new options, :tumblr_album, args
+      page = nokaya.parse_page
+      img_links = nokaya.get_tumblr_album page
+      save_album img_links, nokaya
     end
 
     desc "imgur_album", "Get all images from an Imgur album (nokaya -ial url)"
