@@ -42,13 +42,17 @@ Example:
 
 ### Tumblr page
 
+Due to the various themes and layouts existing for Tumblr galleries, don't be surprised if this scraper doesn't work perfectly with your URL.
+
+Nokaya will first try several techniques to extract the image links, then will fallback to scraping _all_ page image links if failing at proper detection.
+
 `nokaya -tal url`
 
 Example:
 
 `nokaya -tal http://brekninger.tumblr.com`
 
-Downloads all images in the album.  
+Downloads all images in the page.  
 
 ### Imgur album
 

@@ -29,9 +29,14 @@ module Nokaya
       links
     end
     def get_tumblr_album page
-      refs = page.css('img.photo')
+      queries = ['img.photo', '.post .photo a img', '.entry img', 'article img', '.image img', 'img']
+      queries.each do |query|
+        @refs = page.css query
+        next if @refs.empty?
+        break
+      end
       links = []
-      refs.each {|l| links << l['src']}
+      @refs.each {|l| links << l['src']}
       links
     end
     def get_flickr_album page
