@@ -42,9 +42,9 @@ Example:
 
 ### Tumblr page
 
-Due to the various themes and layouts existing for Tumblr galleries, don't be surprised if this scraper doesn't work perfectly with your URL.
+Due to the various themes and layouts existing for Tumblr galleries, this feature may not work perfectly...
 
-Nokaya will first try several techniques to extract the image links, then will fallback to scraping _all_ page image links if failing at proper detection.
+Nokaya will try several techniques to extract the image links, then will fallback to scraping all available links if failing at properly detecting photos.  
 
 `nokaya -tal url`
 

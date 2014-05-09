@@ -49,8 +49,7 @@ module Nokaya
       nokaya = Getter.new options, :tumblr_album, args
       page = nokaya.parse_page
       img_links = nokaya.get_tumblr_album page
-      puts img_links
-      #save_album img_links, nokaya
+      save_album img_links, nokaya
     end
 
     desc "imgur_album", "Get all images from an Imgur album (nokaya -ial url)"
