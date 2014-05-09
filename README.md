@@ -1,6 +1,6 @@
 # Nokaya
 
-CLI to download photos from several online services including Instagram, Imgur albums, Flickr albums, App.net, Tumblr...
+CLI to download photos from several online services including Instagram, Imgur albums, Flickr albums, App.net, Tumblr pages, Photo.net, Deviantart, etc.
 
 Mac OS X only for the time being.
 
@@ -83,6 +83,16 @@ Example:
 `nokaya -pnet http://photo.net/gallery/photocritique/filter\?period\=365\&rank_by\=sum\&category\=Architecture\&store_prefs_p\=0`
 
 Downloads all images in the page.  
+
+### Deviantart gallery
+
+`nokaya -dart url`
+
+Example:
+
+`nokaya -dart http://www.deviantart.com/photography/nature/waterscapes/`
+
+Downloads all images in the gallery.  
 
 ### Favd
 

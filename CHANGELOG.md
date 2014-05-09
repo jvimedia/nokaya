@@ -2,6 +2,7 @@
 
 - Download each album in a unique folder
 - Photo.net
+- Deviantart
 
 # 0.0.6
 

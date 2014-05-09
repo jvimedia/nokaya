@@ -6,7 +6,7 @@ module Nokaya
     require_relative 'image'
     require_relative 'status'
 
-    desc "instagram", "Get the main photo from an Instagram page (nokaya -i url)"
+    desc "instagram", "Get the original picture from an Instagram page (nokaya -i url)"
     map "-i" => :instagram
     option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
     def instagram *args
@@ -15,7 +15,7 @@ module Nokaya
       basic nokaya
     end
 
-    desc "favd", 'Get the photo from a Favd page (nokaya favd url)'
+    desc "favd", 'Get the picture from a Favd page (nokaya favd url)'
     option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
     def favd *args
       check_args args
@@ -25,7 +25,7 @@ module Nokaya
       save_pic img_link, nokaya
     end
 
-    desc "adn", "Get the photo from a photos.app.net page (nokaya adn url)"
+    desc "adn", "Get the picture from a photos.app.net page (nokaya adn url)"
     option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
     def adn *args
       check_args args
@@ -33,7 +33,7 @@ module Nokaya
       basic nokaya
     end
 
-    desc "tumblr", "Get the photo from a Tumblr post (nokaya -tu url)"
+    desc "tumblr", "Get the picture from a Tumblr post (nokaya -tu url)"
     map "-tu" => :tumblr
     option :name, aliases: "-n", type: :string, desc: "Specify a file name without extension"
     def tumblr *args
@@ -42,7 +42,7 @@ module Nokaya
       basic nokaya
     end
 
-    desc "tumblr_album", "Get all images from a Tumblr page (nokaya -tal url)"
+    desc "tumblr_album", "Get all pictures from a Tumblr page (nokaya -tal url)"
     map "-tal" => :tumblr_album
     def tumblr_album *args
       check_args args
@@ -52,7 +52,7 @@ module Nokaya
       save_album img_links, nokaya
     end
 
-    desc "imgur_album", "Get all images from an Imgur album (nokaya -ial url)"
+    desc "imgur_album", "Get all pictures from an Imgur album (nokaya -ial url)"
     map "-ial" => :imgur_album
     def imgur_album *args
       check_args args
@@ -62,7 +62,7 @@ module Nokaya
       save_album img_links, nokaya
     end
 
-    desc "flickr_album", "Get all images from a Flickr album (nokaya -fal url)"
+    desc "flickr_album", "Get all pictures from a Flickr album (nokaya -fal url)"
     map "-fal" => :flickr_album
     def flickr_album *args
       check_args args
@@ -72,13 +72,23 @@ module Nokaya
       save_album img_links, nokaya
     end
 
-    desc "photonet_page", "Get all images from a Photo.net page (nokaya -pnet url)"
-    map "-pnet" => :photonet_page
-    def photonet_page *args
+    desc "photonet", "Get all pictures from a Photo.net page (nokaya -pnet url)"
+    map "-pnet" => :photonet
+    def photonet *args
       check_args args
       nokaya = Getter.new options, :photonet, args
       page = nokaya.parse_page
       img_links = nokaya.get_photonet_album page
+      save_album img_links, nokaya
+    end
+
+    desc "deviantart", "Get all pictures from a Deviantart gallery (nokaya -dart url)"
+    map "-dart" => :deviantart
+    def deviantart *args
+      check_args args
+      nokaya = Getter.new options, :deviantart, args
+      page = nokaya.parse_page
+      img_links = nokaya.get_deviantart page
       save_album img_links, nokaya
     end
 

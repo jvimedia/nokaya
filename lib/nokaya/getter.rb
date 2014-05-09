@@ -22,6 +22,12 @@ module Nokaya
     def get_favd page
       page.css('#largeImage')[0]['src']
     end
+    def get_deviantart page
+      refs = page.css('a.thumb')
+      links = []
+      refs.each {|li| links << li['data-super-img']}
+      links
+    end
     def get_imgur_album page
       refs = page.css('#imagelist .posts .post a')
       links = []
