@@ -92,7 +92,17 @@ Example:
 
 `nokaya -dart http://www.deviantart.com/photography/nature/waterscapes/`
 
-Downloads all images in the gallery.  
+Downloads all images in the gallery. 
+
+### Imageshack user gallery
+
+`nokaya -ishu url`
+
+Example:
+
+`nokaya -ishu https://imageshack.com/user/ToddGilbert`
+
+Downloads all images in the user gallery.  
 
 ### Favd
 

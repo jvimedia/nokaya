@@ -28,6 +28,20 @@ module Nokaya
       refs.each {|li| links << li['data-super-img']}
       links
     end
+    def get_imageshack_user page
+      refs = page.css('a.hero-wrapper')
+      temp = []
+      links = []
+      refs.each {|li| temp << "https://imageshack.com#{li['href']}"}
+      puts Status.toresolve temp.length
+      temp.each do |p|
+        puts Status.resolving p
+        picpage = Nokogiri::HTML(open p)
+        ref = picpage.css('figure.image img')
+        links << "http:#{ref[0]['src']}"
+      end
+      links
+    end
     def get_imgur_album page
       refs = page.css('#imagelist .posts .post a')
       links = []

@@ -28,5 +28,11 @@ module Nokaya
     def self.downloading_album dir
       "\nDownloading album at #{dir}/...\n\n"
     end
+    def self.toresolve number
+      "\n#{number} links to resolve.\n\n"
+    end
+    def self.resolving p
+      "Resolving #{p}...\n"
+    end
   end
 end

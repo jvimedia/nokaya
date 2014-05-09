@@ -3,6 +3,7 @@
 - Download each album in a unique folder
 - Photo.net
 - Deviantart
+- Imageshack user gallery
 
 # 0.0.6
 

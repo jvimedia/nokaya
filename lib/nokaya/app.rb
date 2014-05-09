@@ -92,6 +92,16 @@ module Nokaya
       save_album img_links, nokaya
     end
 
+    desc "imageshack_user", "Get all pictures from an Imageshack user gallery (nokaya -ishu url)"
+    map "-ishu" => :imageshack_user
+    def imageshack_user *args
+      check_args args
+      nokaya = Getter.new({name: "#{args[0].split("/").last}"}, :imageshack_user, args)
+      page = nokaya.parse_page
+      img_links = nokaya.get_imageshack_user page
+      save_album img_links, nokaya
+    end
+
     private
 
     def basic nokaya
@@ -112,7 +122,11 @@ module Nokaya
     end
 
     def download_album img_links, nokaya
-      dir = "#{Dir.home}/Downloads/#{nokaya.type}-#{Time.now.to_i}"
+      if nokaya.options[:name]
+        dir = "#{Dir.home}/Downloads/#{nokaya.type}-#{nokaya.options[:name]}"
+      else
+        dir = "#{Dir.home}/Downloads/#{nokaya.type}-#{Time.now.to_i}"
+      end
       puts Status.downloading_album dir
       Dir.mkdir dir
       img_links.each do |link|
